@@ -7,6 +7,7 @@ import user from "./profile/user.json";
 import data from "./statistics/data.json";
 import friends from "./friendList/friends.json";
 import items from "./transactions/transactions.json";
+import { FriendListItem } from "./friendList/friendListItem";
 
 export const App = () => {
   return (
@@ -35,4 +36,18 @@ Profile.propTypes = {
     views: propTypes.number,
     likes: propTypes.number,
   }),
+}
+
+FriendList.propTypes = {
+    avatar: propTypes.string,
+    name: propTypes.string,
+    isOnline: propTypes.bool,
+    id: propTypes.string,
+}
+
+FriendListItem.propTypes = {
+  avatar: propTypes.string,
+  name: propTypes.string,
+  isOnline: propTypes.bool,
+  id: propTypes.string,
 }
