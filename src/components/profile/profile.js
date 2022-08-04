@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Style.module.css';
-
+import propTypes from "prop-types";
 
 export const Profile = ({ avatar, username, tag, location, followers, views, likes }) => {
   return (
@@ -34,5 +34,14 @@ export const Profile = ({ avatar, username, tag, location, followers, views, lik
   )
 }
 
-
-
+Profile.propTypes = {
+  username: propTypes.string,
+  tag: propTypes.string,
+  location: propTypes.string,
+  avatar: propTypes.string,
+  stats: propTypes.shape({
+    followers: propTypes.number,
+    views: propTypes.number,
+    likes: propTypes.number,
+  }),
+}

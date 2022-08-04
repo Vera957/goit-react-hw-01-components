@@ -1,11 +1,10 @@
 import React from 'react';
-//import propTypes from 'prop-types'
+import propTypes from 'prop-types'
 import s from './Style.module.css';
 
 
 export const FriendListItem = ({ avatar, name, isOnline, id }) => {
-    let status = '';
-    isOnline ? status = `${s.onLine}` : status = `${s.offLine}`;
+    const status = isOnline ? `${s.onLine}` : `${s.offLine}`;
     return (
         <li className={s.item} key={id}>
             <span className={status}></span>
@@ -13,6 +12,13 @@ export const FriendListItem = ({ avatar, name, isOnline, id }) => {
             <p className={s.name}>{name}</p>
         </li>
     )
+}
+
+FriendListItem.propTypes = {
+    avatar: propTypes.string,
+    name: propTypes.string,
+    isOnline: propTypes.bool,
+    id: propTypes.number,
 }
 
 
